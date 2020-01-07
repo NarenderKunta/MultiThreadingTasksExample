@@ -47,7 +47,8 @@ namespace ParallelTasksAsync
             {
                 FinishedTask1 = true;
                 progressBar1.Value = 0;
-                BusinessLayer.PrepareTask1((message) => UpdateProgressBar1(message));
+                BusinessLayer BL = new BusinessLayer();
+                BL.PrepareTask1((message) => UpdateProgressBar1(message));
             }
             //Thread.Sleep(200);
         }
@@ -58,7 +59,8 @@ namespace ParallelTasksAsync
             {
                 FinishedTask2 = true;
                 progressBar2.Value = 0;
-                BusinessLayer.PrepareTask2((message) => UpdateProgressBar2(message));
+                BusinessLayer BL = new BusinessLayer();
+                BL.PrepareTask2((message) => UpdateProgressBar2(message));
             }
             //FinishedTask2 = true;
         }
@@ -69,7 +71,8 @@ namespace ParallelTasksAsync
             {
                 FinishedTask3 = true;
                 progressBar3.Value = 0;
-                BusinessLayer.PrepareTask3((message) => UpdateProgressBar3(message));
+                BusinessLayer BL = new BusinessLayer();
+                BL.PrepareTask3((message) => UpdateProgressBar3(message));
             }
             //FinishedTask3 = true;
         }
@@ -206,7 +209,7 @@ namespace ParallelTasksAsync
             CheckUncheck(((System.Windows.Forms.Control)sender));
         }
 
-        private void CheckUncheck(System.Windows.Forms.Control Name)
+        private void CheckUncheck(Control Name)
         {
             if (((System.Windows.Forms.CheckBox)Name).Checked)
             {
